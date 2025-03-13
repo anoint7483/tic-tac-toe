@@ -2,85 +2,118 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
+    gap: 30px;
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 100vh;
-  }
-  
-  nav {
+}
+
+nav {
     background-color: #333;
     width: 100%;
     padding: 1rem 0;
     color: #fff;
     text-align: center;
-  }
-  
-  nav ul {
+}
+
+nav ul {
     list-style-type: none;
-  }
-  
-  nav li {
-    font-size: 2rem;
+}
+
+nav li {
+    font-size: 3rem;
     font-weight: bold;
-  }
-  
-  .gameContainer {
+}
+
+.modeSelection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 9px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.modeSelection label {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#gameMode {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#gameMode:hover,
+#gameMode:focus {
+    border-color: #555;
+    outline: none;
+}
+
+.gameContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 3rem;
     margin-top: 20px;
-  }
-  
-  .container {
+}
+
+.container {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    gap: 5px;
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(3, 90px);
+    gap: 4px;
     background-color: #333;
-    padding: 10px;
     border-radius: 10px;
-  }
-  
-  .box {
+}
+
+.box {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    border-radius: 10px;
     font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .box:hover {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.box:hover {
     background-color: #ddd;
-  }
-  
-  .boxtext {
+    transform: scale(1.00);
+}
+
+.boxtext {
     font-size: 2rem;
-  }
-  
-  .gameInfo {
+}
+
+.gameInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .info {
+}
+
+.info {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-  }
-  
-  button#reset {
+}
+
+button#reset {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     background-color: #333;
@@ -88,28 +121,30 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button#reset:hover {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button#reset:hover {
     background-color: #555;
-  }
-  
-  .imgbox img {
+    transform: scale(1.05);
+}
+
+.imgbox img {
     width: 150px;
     margin-top: 1rem;
-  }
-  
-  @media (max-width: 600px) {
+}
+
+@media (max-width: 600px) {
     .container {
-      grid-template-columns: repeat(3, 60px);
-      grid-template-rows: repeat(3, 60px);
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
     }
+
     .box {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
+
     .info {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  }
-  
+}
